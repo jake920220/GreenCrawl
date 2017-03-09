@@ -1,0 +1,15 @@
+1. 2차 Bucket 인데 3차가 비어있는 경우
+1) displayName이 10바가지 이런 식으로 그냥 바가지나 버켓만 적혀있을 때는 Standard Bucket으로 해주세요.
+2) 토사바가지, 모래바가지 등등 바가지에 기타 수식어구가 붙어있다면 Etc Bucket으로 분류해주세요.
+
+2. 2차 Grapple 인데 3차가 비어있는 경우
+1) 보통은 Etc Grapple로 넣어주시면 되는데, 혹시 모르니 카테고리 유의어 보시면서 분류해주세요. (나무가 적혀있다면 Wood Grapple, 돌이나 스톤이 적혀있다면 Stone Grapple 이런식으로 되어야해서 카테고리 살펴봐주세요!)
+
+3. 2차 Crusher 인데 3차가 비어있는 경우
+1) displayName에 회전식, 멀티가 적혀있으면 Hydraulic Multi Processor
+2) 그냥 크라샤로 적혀있고 멍텅 이런게 적혀있지 않다면 Hydraulic Crusher
+
+4. 2차 Etc인데 3차에 Thumb Grapple이 적혀있는 경우
+2차 카테고리를 Grapple로 바꿔주시면 됩니다!
+
+이 외에 카테고리가 이상하다 싶으면 최원욱님께 여쭤보시면 고쳐주실 거에요!

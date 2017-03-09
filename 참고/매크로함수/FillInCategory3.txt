@@ -1,0 +1,679 @@
+Dim rng As Range, cel As Range
+
+Dim breaker() As String, sideBreaker() As String, topBreaker() As String, boxBreaker() As String, specialBreaker() As String, etcBreaker() As String, smallBucket() As String, standardBucket() As String, wideBucket() As String, skeletonBucket() As String, specialBucket() As String, etcBucket() As String, coupler() As String, ripper() As String
+Dim multiGrapple() As String, scrapGrapple() As String, stoneGrapple() As String, woodGrapple() As String, orangeGrapple() As String, clamGrapple() As String, thumbGrapple() As String, proThumbGrapple() As String, advGrapple() As String, etcGrapple() As String
+Dim hydCrusher() As String, hydPulverizer() As String, hydMultiCrusher() As String, etcCrusher() As String, liftFork() As String, shear() As String, hammer() As String, coreDrill() As String, compacter() As String, etc() As String
+
+Dim crusher() As String, bucket() As String, grapple() As String
+
+Dim resStr As String
+Dim r As Integer
+Dim nameColumn As Integer
+
+Function ArrayLoad()
+
+Dim i As Integer    '인덱스
+
+i = 0
+
+' ***** breaker *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("breaker")    'dataname 시트에 있는 브레이커 키워드에 접근
+
+ReDim breaker(rng.Count)
+
+For Each cel In rng
+    breaker(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Side Breaker *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("sidebreaker")    'dataname 시트에 있는 사이드브레이커 키워드에 접근
+
+ReDim sideBreaker(rng.Count)
+
+For Each cel In rng
+    sideBreaker(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Top Breaker *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("topbreaker")    'dataname 시트에 있는 탑브레이커 키워드에 접근
+
+ReDim topBreaker(rng.Count)
+
+For Each cel In rng
+    topBreaker(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Box Breaker *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("boxbreaker")    'dataname 시트에 있는 박스브레이커 키워드에 접근
+
+ReDim boxBreaker(rng.Count)
+
+For Each cel In rng
+    boxBreaker(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Special Breaker *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("specialbreaker")    'dataname 시트에 있는 스페셜브레이커 키워드에 접근
+
+ReDim specialBreaker(rng.Count)
+
+For Each cel In rng
+    specialBreaker(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Etc Breaker *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("etcbreaker")    'dataname 시트에 있는 기타브레이커 키워드에 접근
+
+ReDim etcBreaker(rng.Count)
+
+For Each cel In rng
+    etcBreaker(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Small Bucker *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("smallbucket")    'dataname 시트에 있는 쪽버켓 키워드에 접근
+
+ReDim smallBucket(rng.Count)
+
+For Each cel In rng
+    smallBucket(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Standard Bucket *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("standardbucket")    'dataname 시트에 있는 본버켓 키워드에 접근
+
+ReDim standardBucket(rng.Count)
+
+For Each cel In rng
+    standardBucket(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Wide Bucket *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("widebucket")    'dataname 시트에 있는 대버켓 키워드에 접근
+
+ReDim wideBucket(rng.Count)
+
+For Each cel In rng
+    wideBucket(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Skeleton Bucket *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("skeletonbucket")    'dataname 시트에 있는 채버켓 키워드에 접근
+
+ReDim skeletonBucket(rng.Count)
+
+For Each cel In rng
+    skeletonBucket(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Special Bucket *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("specialbucket")    'dataname 시트에 있는 스페셜버켓 키워드에 접근
+
+ReDim specialBucket(rng.Count)
+
+For Each cel In rng
+    specialBucket(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Etc Bucket *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("etcbucket")    'dataname 시트에 있는 기타버켓 키워드에 접근
+
+ReDim etcBucket(rng.Count)
+
+For Each cel In rng
+    etcBucket(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Quick Coupler *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("coupler")    'dataname 시트에 있는 버켓클렘프 키워드에 접근
+
+ReDim coupler(rng.Count)
+
+For Each cel In rng
+    coupler(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Ripper *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("ripper")    'dataname 시트에 있는 리퍼 키워드에 접근
+
+ReDim ripper(rng.Count)
+
+For Each cel In rng
+    ripper(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Multi Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("multigrapple")    'dataname 시트에 있는 무유압집게 키워드에 접근
+
+ReDim multiGrapple(rng.Count)
+
+For Each cel In rng
+    multiGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Scrap Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("scrapgrapple")    'dataname 시트에 있는 고철집게 키워드에 접근
+
+ReDim scrapGrapple(rng.Count)
+
+For Each cel In rng
+    scrapGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Stone Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("stonegrapple")    'dataname 시트에 있는 돌집게 키워드에 접근
+
+ReDim stoneGrapple(rng.Count)
+
+For Each cel In rng
+    stoneGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Wood Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("woodgrapple")    'dataname 시트에 있는 나무집게 키워드에 접근
+
+ReDim woodGrapple(rng.Count)
+
+For Each cel In rng
+    woodGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Orange Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("orangegrapple")    'dataname 시트에 있는 오렌지집게 키워드에 접근
+
+ReDim orangeGrapple(rng.Count)
+
+For Each cel In rng
+    orangeGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** ClamShell Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("clamgrapple")    'dataname 시트에 있는 클렘집게 키워드에 접근
+
+ReDim clamGrapple(rng.Count)
+
+For Each cel In rng
+    clamGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Thumb Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("thumb")    'dataname 시트에 있는 딱따구리집게 키워드에 접근
+
+ReDim thumbGrapple(rng.Count)
+
+For Each cel In rng
+    thumbGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Progressive Thumb Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("progressivethumb")    'dataname 시트에 있는 호랑이집게 키워드에 접근
+
+ReDim proThumbGrapple(rng.Count)
+
+For Each cel In rng
+    proThumbGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Advanced Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("advanced")    'dataname 시트에 있는 코끼리집게 키워드에 접근
+
+ReDim advGrapple(rng.Count)
+
+For Each cel In rng
+    advGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Etc Grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("etcgrapple")    'dataname 시트에 있는 기타집게 키워드에 접근
+
+ReDim etcGrapple(rng.Count)
+
+For Each cel In rng
+    etcGrapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Hydraulic Crusher *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("hydcrusher")    'dataname 시트에 있는 반자동크러셔 키워드에 접근
+
+ReDim hydCrusher(rng.Count)
+
+For Each cel In rng
+    hydCrusher(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Hydraulic Pulverizer *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("hydpulverizer")    'dataname 시트에 있는 멍텅구리크러셔 키워드에 접근
+
+ReDim hydPulverizer(rng.Count)
+
+For Each cel In rng
+    hydPulverizer(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Hydraulic Multi Processor *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("hydmulticrusher")    'dataname 시트에 있는 회전식크러셔 키워드에 접근
+
+ReDim hydMultiCrusher(rng.Count)
+
+For Each cel In rng
+    hydMultiCrusher(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Etc Crusher *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("etccrusher")    'dataname 시트에 있는 기타크러셔 키워드에 접근
+
+ReDim etcCrusher(rng.Count)
+
+For Each cel In rng
+    etcCrusher(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Lift Fork *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("liftfork")    'dataname 시트에 있는 지게발 키워드에 접근
+
+ReDim liftFork(rng.Count)
+
+For Each cel In rng
+    liftFork(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Shear & Cutter *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("shear")    'dataname 시트에 있는 고철가위&커터 키워드에 접근
+
+ReDim shear(rng.Count)
+
+For Each cel In rng
+    shear(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Hammer *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("hammer")    'dataname 시트에 있는 함마 키워드에 접근
+
+ReDim hammer(rng.Count)
+
+For Each cel In rng
+    hammer(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** CoreDrill *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("coredrill")    'dataname 시트에 있는 코어드릴 키워드에 접근
+
+ReDim coreDrill(rng.Count)
+
+For Each cel In rng
+    coreDrill(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Compactor *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("compactor")    'dataname 시트에 있는 콤펙터 키워드에 접근
+
+ReDim compactor(rng.Count)
+
+For Each cel In rng
+    compactor(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** etc *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("etc")    'dataname 시트에 있는 기타 키워드에 접근
+
+ReDim etc(rng.Count)
+
+For Each cel In rng
+    etc(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** bucket *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("totalbucket")    'dataname 시트에 있는 버켓 키워드에 접근
+
+ReDim bucket(rng.Count)
+
+For Each cel In rng
+    bucket(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("totalgrapple")    'dataname 시트에 있는 집게 키워드에 접근
+
+ReDim grapple(rng.Count)
+
+For Each cel In rng
+    grapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Crusher *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("totalcrusher")    'dataname 시트에 있는 크러셔 키워드에 접근
+
+ReDim crusher(rng.Count)
+
+For Each cel In rng
+    crusher(i) = cel.Value
+    i = i + 1
+Next cel
+
+End Function
+
+Function SearchCategory(arrayName() As String, resultStr As String) As Boolean
+
+Dim i As Integer
+
+'Debug.Print LBound(arrayName)
+'Debug.Print "----------------"
+'Debug.Print UBound(arrayName)
+
+For i = 0 To UBound(arrayName) - LBound(arrayName) - 1
+    If InStr(Cells(r, nameColumn), arrayName(i)) > 0 Then
+'        Debug.Print arrayName(i)
+        resStr = resultStr
+        SearchCategory = True
+        Exit Function
+    End If
+Next i
+
+SearchCategory = False
+
+End Function
+
+Sub FillInCategory3()
+
+Dim i As Integer    '인덱스
+
+Dim searchRes As Boolean
+
+r = 2               '매크로 시작 행 수
+nameColumn = 10     '네임 적혀있는 열 수
+
+Call ArrayLoad      '3차 카테고리 각각의 키워드를 배열로 가져오는 작업
+
+Do Until IsEmpty(Cells(r, nameColumn))
+
+    resStr = ""
+    searchRes = False
+    
+    For i = 0 To UBound(breaker) - LBound(breaker) - 1
+        If InStr(Cells(r, nameColumn), breaker(i)) > 0 Then
+            resStr = "Side Breaker,사이드타입"
+            GoTo ContinueLoop
+        End If
+    Next i
+    
+    searchRes = SearchCategory(sideBreaker, "Side Breaker,사이드타입")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(topBreaker, "Top Breaker,탑타입")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(boxBreaker, "Box Breaker,박스타입")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(specialBreaker, "Special Breaker,스페셜타입")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(smallBucket, "Small Bucket,쪽버켓")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(standardBucket, "Standard Bucket,본버켓")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(wideBucket, "Wide Bucket,대버켓")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(skeletonBucket, "Skeleton Bucket,채버켓")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(specialBucket, "Special Bucket,스페셜버켓")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(etcBucket, "Etc Bucket,기타버켓")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    If Cells(r, nameColumn).Value <> "Quick Coupler" Then
+        searchRes = SearchCategory(bucket, "Standard Bucket,본버켓")
+        
+        If searchRes = True Then
+            GoTo ContinueLoop
+        End If
+    End If
+    
+    searchRes = SearchCategory(multiGrapple, "Multi Grapple,무유압집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(scrapGrapple, "Scrap Grapple,고철집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(stoneGrapple, "Stone Grapple,돌집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(woodGrapple, "Wood Grapple,나무집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(orangeGrapple, "Orange Grapple,오렌지집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+    searchRes = SearchCategory(clamGrapple, "ClamShell Grapple,클렘집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+    searchRes = SearchCategory(thumbGrapple, "Thumb Grapple,딱다구리집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+    searchRes = SearchCategory(proThumbGrapple, "Progressive Thumb Grapple,호랑이집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+
+    searchRes = SearchCategory(advGrapple, "Advanced Grapple,코끼리집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+    searchRes = SearchCategory(etcGrapple, "Etc Grapple,기타집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(grapple, "Etc Grapple,기타집게")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+    searchRes = SearchCategory(hydCrusher, "Hydraulic Crusher,반자동크러셔")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+    searchRes = SearchCategory(hydPulverizer, "Hydraulic Pulverizer,멍텅구리크러셔")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+
+    searchRes = SearchCategory(hydMultiCrusher, "Hydraulic Multi Processor,회전식크러셔")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(etcCrusher, "Etc Crusher,기타 크러셔")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(crusher, "Hydraulic Crusher,반자동크러셔")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+
+ContinueLoop:
+Cells(r, 3).Value = resStr
+r = r + 1
+
+Loop
+
+End Sub

@@ -1,0 +1,68 @@
+Sub FillModelTon()
+
+Dim reg As New RegExp
+Dim matchStr, matches
+Dim r, nameColumn, i As Integer
+Dim resStr As String
+
+Dim grade
+
+grade = Array("10", "08", "07", "06", "04", "03", "02", "030", "035", "017", "020", "010", "015")
+
+r = 2
+nameColumn = 10
+
+reg.Pattern = "\d{2,3}"
+
+Do Until IsEmpty(Cells(r, nameColumn))
+    
+    resStr = ""
+
+    Set matches = reg.Execute(Cells(r, nameColumn))
+    
+    If matches.Count > 0 Then
+        matchStr = matches(0)
+        
+        If CInt(matchStr) > 320 Then
+            resStr = "Excavator(33t over)"
+        End If
+        
+        For i = 0 To 12
+            If matchStr = grade(i) Then
+                Select Case i
+                    Case 0
+                        resStr = "Excavator(28~32t)"
+                    Case 1
+                        resStr = "Excavator(20~27t)"
+                    Case 2
+                        resStr = "Excavator(16~19t)"
+                    Case 3
+                        resStr = "Excavator(12~15.5t)"
+                    Case 4
+                        resStr = "Excavator(7~11t)"
+                    Case 5, 6
+                        resStr = "Excavator(4.5t~6t)"
+                    Case 7, 8
+                        resStr = "Mini Excavator(2.6~4t)"
+                    Case 9, 10
+                        resStr = "Mini Excavator(1.7~2.5t)"
+                    Case 11, 12
+                        resStr = "Mini Excavator(0.1~1.6t)"
+                End Select
+            End If
+        Next i
+        
+    End If
+    
+    If InStr(Cells(r, nameColumn), "ลู") Then
+        resStr = "Excavator(28~32t)"
+    End If
+
+    Cells(r, 4).Value = resStr
+
+    r = r + 1
+
+Loop
+
+End Sub
+

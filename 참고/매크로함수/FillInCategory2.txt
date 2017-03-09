@@ -1,0 +1,273 @@
+Dim rng As Range, cel As Range
+
+Dim breaker() As String, coupler() As String, ripper() As String
+Dim bucket() As String, grapple() As String, crusher() As String
+Dim liftFork() As String, shear() As String, hammer() As String, coreDrill() As String, compactor() As String, etc() As String
+
+Dim resStr As String
+Dim r As Integer
+Dim nameColumn As Integer
+
+Function ArrayLoad()
+
+Dim i As Integer    '인덱스
+
+i = 0
+
+' ***** breaker *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("breaker")    'dataname 시트에 있는 브레이커 키워드에 접근
+
+ReDim breaker(rng.Count)
+
+For Each cel In rng
+    breaker(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Quick Coupler *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("coupler")    'dataname 시트에 있는 버켓클렘프 키워드에 접근
+
+ReDim coupler(rng.Count)
+
+For Each cel In rng
+    coupler(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Ripper *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("ripper")    'dataname 시트에 있는 리퍼 키워드에 접근
+
+ReDim ripper(rng.Count)
+
+For Each cel In rng
+    ripper(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** bucket *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("totalbucket")    'dataname 시트에 있는 버켓 키워드에 접근
+
+ReDim bucket(rng.Count)
+
+For Each cel In rng
+    bucket(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** grapple *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("totalgrapple")    'dataname 시트에 있는 집게 키워드에 접근
+
+ReDim grapple(rng.Count)
+
+For Each cel In rng
+    grapple(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Crusher *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("totalcrusher")    'dataname 시트에 있는 크러셔 키워드에 접근
+
+ReDim crusher(rng.Count)
+
+For Each cel In rng
+    crusher(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Lift Fork *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("liftfork")    'dataname 시트에 있는 지게발 키워드에 접근
+
+ReDim liftFork(rng.Count)
+
+For Each cel In rng
+    liftFork(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Shear & Cutter *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("shear")    'dataname 시트에 있는 고철가위&커터 키워드에 접근
+
+ReDim shear(rng.Count)
+
+For Each cel In rng
+    shear(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Hammer *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("hammer")    'dataname 시트에 있는 함마 키워드에 접근
+
+ReDim hammer(rng.Count)
+
+For Each cel In rng
+    hammer(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** CoreDrill *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("coredrill")    'dataname 시트에 있는 코어드릴 키워드에 접근
+
+ReDim coreDrill(rng.Count)
+
+For Each cel In rng
+    coreDrill(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** Compactor *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("compactor")    'dataname 시트에 있는 콤펙터 키워드에 접근
+
+ReDim compactor(rng.Count)
+
+For Each cel In rng
+    compactor(i) = cel.Value
+    i = i + 1
+Next cel
+
+i = 0
+
+' ***** etc *****
+Set rng = ActiveWorkbook.Sheets("dataname").Range("etc")    'dataname 시트에 있는 기타 키워드에 접근
+
+ReDim etc(rng.Count)
+
+For Each cel In rng
+    etc(i) = cel.Value
+    i = i + 1
+Next cel
+
+End Function
+
+Function SearchCategory(arrayName() As String, resultStr As String) As Boolean
+
+Dim i As Integer
+
+'Debug.Print LBound(arrayName)
+'Debug.Print "----------------"
+'Debug.Print UBound(arrayName)
+
+For i = 0 To UBound(arrayName) - LBound(arrayName) - 1
+    If InStr(Cells(r, nameColumn), arrayName(i)) > 0 Then
+'        Debug.Print arrayName(i)
+        resStr = resultStr
+        SearchCategory = True
+        Exit Function
+    End If
+Next i
+
+SearchCategory = False
+
+End Function
+
+Sub FillInCategory2()
+
+Dim i As Integer    '인덱스
+
+Dim searchRes As Boolean
+
+r = 2               '매크로 시작 행 수
+nameColumn = 10     '네임 적혀있는 열 수
+
+Call ArrayLoad      '3차 카테고리 각각의 키워드를 배열로 가져오는 작업
+
+Do Until IsEmpty(Cells(r, nameColumn))
+
+    resStr = ""
+    searchRes = False
+    
+    searchRes = SearchCategory(breaker, "Hydraulic Breaker")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(coupler, "Quick Coupler")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(bucket, "Bucket")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(liftFork, "Lift Fork")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(ripper, "Ripper")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(grapple, "Grapple")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(crusher, "Crusher")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(shear, "Shear&Cutter")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(hammer, "Vibro Hammer")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(coreDrill, "Core Drill")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    searchRes = SearchCategory(compactor, "Compactor")
+    
+    If searchRes = True Then
+        GoTo ContinueLoop
+    End If
+    
+    resStr = "ETC"
+
+ContinueLoop:
+Cells(r, 2).Value = resStr
+r = r + 1
+
+Loop
+
+End Sub
+
