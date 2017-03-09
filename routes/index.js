@@ -26,7 +26,7 @@ var crawl = require('crawlingmodule');
 
 // crawl.testone(224831, 'attach');
 
-// crawl.getCSVSeperated(5, 10, 'attach');
+crawl.getCSVSeperated(0, 1, 'attach');
 // crawl.getImgs('attach_3_7.csv', 'attach');
 // crawl.failedImgDown('attach');
 
