@@ -24,10 +24,9 @@ var crawl = require('crawlingmodule');
  * 지게차6톤이상 - zigyechar6
  */
 
-// crawl.testone(228239 , 'attach');
 
-crawl.getCSVSeperated(0, 3, 'attach');
-// crawl.getImgs('attach_3_8.csv', 'attach');
+// crawl.getCSVSeperated(4, 12, 'attach');
+crawl.getImgs('attach/'+'attach_3_12.csv', 'attach');
 // crawl.failedImgDown('attach');
 
 

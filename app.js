@@ -10,6 +10,15 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+myEmitter.setMaxListeners(200);
+console.log(myEmitter.getMaxListeners());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -17,8 +26,8 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit:'50mb'}));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit:50000 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
