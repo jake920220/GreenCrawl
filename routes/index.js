@@ -25,9 +25,23 @@ var crawl = require('crawlingmodule');
  */
 
 
-// crawl.getCSVSeperated(4, 12, 'attach');
-crawl.getImgs('attach/'+'attach_3_12.csv', 'attach');
-// crawl.failedImgDown('attach');
+/*
+
+ 229991
+ 229994
+ 230013
+ 230022
+ 230053
+ */
+
+// crawl.onePage(230098, 'attach');
+// crawl.getCSVSeperated(1, 6, 'attach');
+crawl.getImgs('attach/'+'attach_failed_3_14.csv', 'attach');
+var failed =[
+    230315,
+    230381
+];
+// crawl.failedImgDown(failed,'attach');
 
 
 /* GET home page. */
